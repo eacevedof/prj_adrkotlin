@@ -27,7 +27,7 @@
                 android:ems="10"
                 android:id="@+id/edtName"
                 android:hint="@string/edt_name"
-        />
+                android:autofillHints=""/>
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

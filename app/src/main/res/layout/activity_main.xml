@@ -18,12 +18,15 @@
                 android:ems="10"
                 android:id="@+id/edtAge"
                 android:hint="@string/edt_age"
-        />
+                android:text="@string/edt_age"
+                android:autofillHints=""
+                tools:targetApi="o"/>
+
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="Name"
+                android:text="@string/edt_name"
                 android:ems="10"
                 android:id="@+id/edtName"
                 android:hint="@string/edt_name"
