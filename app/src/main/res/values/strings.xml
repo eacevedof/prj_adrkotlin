@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">AdrKotlin</string>
+    <string name="app_name">Mi App AdrKotlin</string>
+    <string name="edt_name">Name</string>
+    <string name="edt_age">Age</string>
 </resources>
