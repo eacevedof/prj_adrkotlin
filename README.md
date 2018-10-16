@@ -1,2 +1,4 @@
 # prj_adrkotlin
-Curso de Android and Kotlin desde cero Preparando el Android Studio
+
+## [Youtube - Curso de Android and Kotlin desde cero - Alex Pagoada](https://www.youtube.com/playlist?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS)
+
