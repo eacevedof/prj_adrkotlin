@@ -14,9 +14,8 @@ class MainActivity : AppCompatActivity(){
     private var txtAge: TextView? = null
     private var btnGo: Button? = null
 
-
-    private var name: String? = null
-    private var age = 0
+    private var sName: String? = null
+    private var iAge = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
