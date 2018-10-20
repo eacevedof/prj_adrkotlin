@@ -65,12 +65,23 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"/>
             <TextView
-                    android:text=""
                     android:id="@+id/txtAge"
+                    android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"/>
         </LinearLayout>
 
+        <!-- BUTTON -->
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <Button
+                    android:id="@+id/btnGo"
+                    android:text="@string/btn_go"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
