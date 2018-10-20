@@ -6,7 +6,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 
-class MainActivity : AppCompatActivity(), TextWatcher{
+class MainActivity : AppCompatActivity(){
 
     private var edtName: EditText? = null
     private var edtAge: EditText? = null
@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity(), TextWatcher{
         edtName = findViewById(R.id.edtName) as EditText
         edtAge = findViewById(R.id.edtAge) as EditText
 
-        edtName?.addTextChangedListener(this)
+        //edtName?.addTextChangedListener(this)
     }
 
 }//MainActivity
