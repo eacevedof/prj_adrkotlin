@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import org.w3c.dom.Text
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity(){
     private var edtAge: EditText? = null
     private var txtName: TextView? = null
     private var txtAge: TextView? = null
+    private var btnGo: Button? = null
 
 
     private var name: String? = null
@@ -35,6 +37,8 @@ class MainActivity : AppCompatActivity(){
         //labels
         txtName = findViewById(R.id.txtName) as TextView
         txtAge = findViewById(R.id.txtAge) as TextView
-    }
+        //buttons
+        btnGo = findViewById(R.id.btnGo) as Button
+    }//load_inputs
 
 }//MainActivity
