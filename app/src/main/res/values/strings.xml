@@ -2,4 +2,6 @@
     <string name="app_name">Mi App AdrKotlin</string>
     <string name="edt_name">Name</string>
     <string name="edt_age">Age</string>
+    <string name="txt_name">Name</string>
+    <string name="txt_age">Age</string>
 </resources>

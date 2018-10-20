@@ -19,43 +19,57 @@
                 android:id="@+id/edtAge"
                 android:hint="@string/edt_age"
                 android:text="@string/edt_age"
-                android:autofillHints=""
-                tools:targetApi="o"/>
+                android:autofillHints="@string/edt_age"
+                tools:targetApi="o"
+        />
 
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="@string/edt_name"
                 android:ems="10"
                 android:id="@+id/edtName"
                 android:hint="@string/edt_name"
+                android:text="@string/edt_name"
+                android:autofillHints="@string/edt_name"
+                tools:targetApi="o"
         />
+        <!-- NAME -->
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <TextView
-                    android:text="TextView"
+                    android:id="@+id/txtNameLbl"
+                    android:text="@string/txt_name"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView" android:layout_weight="1"/>
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
             <TextView
-                    android:text="TextView"
+                    android:id="@+id/txtName"
+                    android:text=""
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView2" android:layout_weight="1"/>
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
         </LinearLayout>
+
+        <!-- AGE -->
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <TextView
-                    android:text="TextView"
+                    android:id="@+id/txtAgeLbl"
+                    android:text="@string/txt_age"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView4" android:layout_weight="1"/>
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
             <TextView
-                    android:text="TextView"
+                    android:text=""
+                    android:id="@+id/txtAge"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView3" android:layout_weight="1"/>
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
         </LinearLayout>
 
     </LinearLayout>
