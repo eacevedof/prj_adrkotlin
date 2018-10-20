@@ -29,10 +29,10 @@ class MainActivity() : AppCompatActivity(),TextWatcher {
         super.onCreate(savedInstanceState)
         //R.layout.activity_main: app/res/layout/activity_main.xml
         setContentView(R.layout.activity_main)
-        this.load_inputs()
-        //edtName?.addTextChangedListener(this)
-        edtName!!.addTextChangedListener(this)
 
+        this.load_inputs()
+        this.add_listeners()
+        this.operacion()
     }//onCreate
 
     private fun load_inputs()
@@ -47,16 +47,26 @@ class MainActivity() : AppCompatActivity(),TextWatcher {
         btnGo = findViewById(R.id.btnGo) as Button
     }//load_inputs
 
-    override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    private fun add_listeners()
+    {
+        edtName!!.addTextChangedListener(this)
+    }//add_listeners
 
     override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+
+    }//onTextChanged
+
+    override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+    }//beforeTextChanged
 
     override fun afterTextChanged(s: Editable?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+
+    }//afterTextChanged
+
+    private fun operacion()
+    {
+
+    }//operacion
 
 }//MainActivity
