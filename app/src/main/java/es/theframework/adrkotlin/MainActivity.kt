@@ -5,11 +5,16 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
+import android.widget.TextView
+import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity(){
 
     private var edtName: EditText? = null
     private var edtAge: EditText? = null
+    private var txtName: TextView? = null
+    private var txtAge: TextView? = null
+
 
     private var name: String? = null
     private var age = 0
@@ -18,11 +23,18 @@ class MainActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         //R.layout.activity_main: app/res/layout/activity_main.xml
         setContentView(R.layout.activity_main)
+        this.load_inputs()
+        //edtName?.addTextChangedListener(this)
+    }//onCreate
 
+    private fun load_inputs()
+    {
+        //cajas input
         edtName = findViewById(R.id.edtName) as EditText
         edtAge = findViewById(R.id.edtAge) as EditText
-
-        //edtName?.addTextChangedListener(this)
+        //labels
+        txtName = findViewById(R.id.txtName) as TextView
+        txtAge = findViewById(R.id.txtAge) as TextView
     }
 
 }//MainActivity

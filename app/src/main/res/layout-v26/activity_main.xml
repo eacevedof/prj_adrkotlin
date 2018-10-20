@@ -37,7 +37,7 @@
                 android:autofillHints="@string/edt_name"
                 tools:targetApi="o"
         />
-        
+
         <!-- AGE -->
         <LinearLayout
                 android:orientation="horizontal"
