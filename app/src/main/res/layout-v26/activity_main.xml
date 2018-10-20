@@ -11,6 +11,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -18,16 +19,82 @@
                 android:ems="10"
                 android:id="@+id/edtAge"
                 android:hint="@string/edt_age"
-                android:text="@string/edt_age" android:autofillHints=""/>
+                android:text="@string/edt_age"
+                android:paddingLeft="10sp"
+                android:autofillHints="@string/edt_age"
+                tools:targetApi="o"
+        />
+
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="@string/edt_name"
                 android:ems="10"
                 android:id="@+id/edtName"
                 android:hint="@string/edt_name"
-                android:autofillHints=""/>
+                android:text="@string/edt_name"
+                android:paddingLeft="10sp"
+                android:autofillHints="@string/edt_name"
+                tools:targetApi="o"
+        />
+        
+        <!-- AGE -->
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/txtAgeLbl"
+                    android:text="@string/txt_age"
+                    android:textSize="20sp"
+                    android:paddingLeft="10sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+            <TextView
+                    android:id="@+id/txtAge"
+                    android:text=""
+                    android:textSize="20sp"
+                    android:paddingLeft="10sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+        </LinearLayout>
 
+        <!-- NAME -->
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/txtNameLbl"
+                    android:text="@string/txt_name"
+                    android:textSize="20sp"
+                    android:paddingLeft="10sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+            <TextView
+                    android:id="@+id/txtName"
+                    android:text=""
+                    android:textSize="20sp"
+                    android:paddingLeft="10sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+        </LinearLayout>
+
+        <!-- BUTTON -->
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <Button
+                    android:id="@+id/btnGo"
+                    android:text="@string/btn_go"
+                    android:ems="10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
