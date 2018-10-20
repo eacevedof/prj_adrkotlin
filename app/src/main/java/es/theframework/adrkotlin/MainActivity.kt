@@ -8,9 +8,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.text.TextWatcher
+import android.view.View
+import android.view.View.OnClickListener
 import android.widget.Toast
 
-class MainActivity() : AppCompatActivity(),TextWatcher {
+class MainActivity() : AppCompatActivity(),TextWatcher, OnClickListener {
 
     private var edtName: EditText? = null
     private var edtAge: EditText? = null
@@ -33,7 +35,7 @@ class MainActivity() : AppCompatActivity(),TextWatcher {
 
         this.load_inputs()
         this.add_listeners()
-        this.operacion()
+        //this.operacion()
     }//onCreate
 
     private fun load_inputs()
@@ -51,7 +53,12 @@ class MainActivity() : AppCompatActivity(),TextWatcher {
     private fun add_listeners()
     {
         edtName!!.addTextChangedListener(this)
+        btnGo!!.setOnClickListener(this)
     }//add_listeners
+
+    override fun onClick(v: View?) {
+        this.operacion()
+    }//view.onclick
 
     override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
         Toast.makeText(this,s.toString(),Toast.LENGTH_SHORT).show()
@@ -67,6 +74,14 @@ class MainActivity() : AppCompatActivity(),TextWatcher {
 
     private fun operacion()
     {
+        sName = edtName?.text.toString()
+        val sAge =  edtAge?.text.toString()
+
+        //si sname==""
+        if( !(sName?.equals("") ?: false) )
+            txtName?.text = sName
+        if(sAge != "")
+            txtAge?.text = sAge
 
     }//operacion
 
