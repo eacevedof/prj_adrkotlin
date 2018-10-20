@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.text.TextWatcher
+import android.widget.Toast
 
 class MainActivity() : AppCompatActivity(),TextWatcher {
 
@@ -53,7 +54,7 @@ class MainActivity() : AppCompatActivity(),TextWatcher {
     }//add_listeners
 
     override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-
+        Toast.makeText(this,s.toString(),Toast.LENGTH_SHORT).show()
     }//onTextChanged
 
     override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
