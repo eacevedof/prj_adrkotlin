@@ -72,6 +72,27 @@
                     android:layout_weight="1"/>
         </LinearLayout>
 
+        <!-- GENDER -->
+        <RadioGroup
+                android:id="@+id/rdgGender"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <RadioButton
+                    android:id="@+id/rdbGender1"
+                    android:text="@string/rdb_gender1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:layout_weight="1"/>
+            <RadioButton
+                    android:id="@+id/rdbGender2"
+                    android:text="@string/rdb_gender2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+        </RadioGroup>
+
         <!-- BUTTON -->
         <LinearLayout
                 android:orientation="horizontal"

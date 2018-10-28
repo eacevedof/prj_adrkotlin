@@ -4,5 +4,7 @@
     <string name="edt_age">Age</string>
     <string name="txt_name">Name</string>
     <string name="txt_age">Age</string>
+    <string name="rdb_gender1">Woman</string>
+    <string name="rdb_gender2">Man</string>
     <string name="btn_go">Go</string>
 </resources>
