@@ -4,13 +4,10 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcel
 import android.text.Editable
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.text.TextWatcher
 import android.view.View
 import android.view.View.OnClickListener
-import android.widget.Toast
+import android.widget.*
 
 class MainActivity() : AppCompatActivity(),TextWatcher, OnClickListener {
 
@@ -18,6 +15,8 @@ class MainActivity() : AppCompatActivity(),TextWatcher, OnClickListener {
     private var edtAge: EditText? = null
     private var txtName: TextView? = null
     private var txtAge: TextView? = null
+    private var rdbGender1:RadioButton? = null
+    private var rdbGender2:RadioButton? = null
     private var btnGo: Button? = null
 
     private var sName: String? = null
@@ -46,6 +45,10 @@ class MainActivity() : AppCompatActivity(),TextWatcher, OnClickListener {
         //labels
         txtName = findViewById(R.id.txtName) as TextView
         txtAge = findViewById(R.id.txtAge) as TextView
+        //gender
+        rdbGender1 = findViewById(R.id.rdbGender1) as RadioButton
+        rdbGender2 = findViewById(R.id.rdbGender2) as RadioButton
+        
         //buttons
         btnGo = findViewById(R.id.btnGo) as Button
     }//load_inputs
