@@ -9,14 +9,14 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget.*
 
-class MainActivity() : AppCompatActivity(),TextWatcher, OnClickListener {
+class MainActivity() : AppCompatActivity(),TextWatcher, OnClickListener, CompoundButton.OnCheckedChangeListener {
 
     private var edtName: EditText? = null
     private var edtAge: EditText? = null
     private var txtName: TextView? = null
     private var txtAge: TextView? = null
-    private var rdbGender1:RadioButton? = null
-    private var rdbGender2:RadioButton? = null
+    private var rdbGender1: RadioButton? = null
+    private var rdbGender2: RadioButton? = null
     private var btnGo: Button? = null
 
     private var sName: String? = null
@@ -48,7 +48,7 @@ class MainActivity() : AppCompatActivity(),TextWatcher, OnClickListener {
         //gender
         rdbGender1 = findViewById(R.id.rdbGender1) as RadioButton
         rdbGender2 = findViewById(R.id.rdbGender2) as RadioButton
-        
+
         //buttons
         btnGo = findViewById(R.id.btnGo) as Button
     }//load_inputs
@@ -56,8 +56,14 @@ class MainActivity() : AppCompatActivity(),TextWatcher, OnClickListener {
     private fun add_listeners()
     {
         edtName!!.addTextChangedListener(this)
+        rdbGender1!!.setOnCheckedChangeListener(this)
+        rdbGender2!!.setOnCheckedChangeListener(this)
         btnGo!!.setOnClickListener(this)
     }//add_listeners
+
+    override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
+        Toast.makeText(this,"Ha seleccionado una opcion",Toast.LENGTH_LONG)
+    }
 
     override fun onClick(v: View?) {
         this.operacion()

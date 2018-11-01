@@ -6,8 +6,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!-- aqui esto daba error
         <item name="colorButtonBackground">@color/colorButtonBackground</item>
         <item name="colorButtonText">@color/colorButtonText</item>
+        -->
     </style>
 
 </resources>
