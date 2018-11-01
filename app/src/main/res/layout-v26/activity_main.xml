@@ -18,7 +18,6 @@
                 android:ems="10"
                 android:id="@+id/edtAge"
                 android:hint="@string/edt_age"
-                android:text="@string/edt_age"
                 android:autofillHints="@string/edt_age"
                 tools:targetApi="o"
         />
@@ -30,7 +29,6 @@
                 android:ems="10"
                 android:id="@+id/edtName"
                 android:hint="@string/edt_name"
-                android:text="@string/edt_name"
                 android:autofillHints="@string/edt_name"
                 tools:targetApi="o"
         />
@@ -102,7 +100,7 @@
                     android:id="@+id/btnGo"
                     android:text="@string/btn_go"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" android:backgroundTint="@color/colorButtonBackground"/>
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
