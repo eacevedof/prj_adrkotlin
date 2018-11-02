@@ -15,7 +15,7 @@
     var iString = arString.count()-1
     for(i in 0..iString) sData =  arString.get(i)
     ```
-- [34 - Bucle ciclo forEach](https://www.youtube.com/watch?v=KUgzw_I8uqg&list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&index=24)
+- [24 - Bucle ciclo forEach](https://www.youtube.com/watch?v=KUgzw_I8uqg&list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&index=24)
     ```kotlin
     var arStrings2 = Array<String>(3){""}
     var arStrings3 = Array(3){""}
@@ -27,8 +27,9 @@
        sItem -> sData = sItem
     }//froeach
     ```
-
-
+ - [25 - Funcion arrayOfNulls](https://youtu.be/XNkohi44ghA?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS)
+ 
+    
     
 ## Errors
 - 1 `Android resource linking failed Output: app\build\intermediates\incremental\mergeDebugResources\merged.dir\values\values.xml:646: 
