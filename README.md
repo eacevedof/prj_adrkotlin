@@ -94,7 +94,21 @@
     this.edtName!!.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS
     ```
 - [28 - onItemClick](https://www.youtube.com/watch?v=DpAhe20WlhI&list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&index=28)
+    - Se implementa la interfaz `import android.widget.AdapterView.OnItemClickListener`
+    ```kotlin
+    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        edtName!!.setText(arNames?.get(position))
+        edtAge!!.setText(arAges?.get(position))
 
+        when(arGenders!!.get(position)){
+            "Man" -> rdbGender2!!.isChecked = true
+            "Woman" -> rdbGender1!!.isChecked = true
+        }//when
+
+        this.iItemPos = position
+        this.sItemAction = "update"
+    }//onItemClick
+    ```
     
 ## Errors
 - 1 `Android resource linking failed Output: app\build\intermediates\incremental\mergeDebugResources\merged.dir\values\values.xml:646: 

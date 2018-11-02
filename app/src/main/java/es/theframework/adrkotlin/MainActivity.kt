@@ -2,16 +2,17 @@ package es.theframework.adrkotlin
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Parcel
 import android.text.Editable
 import android.text.InputType
 import android.text.TextWatcher
 import android.view.View
 import android.view.View.OnClickListener
 import android.widget.*
+import android.widget.AdapterView.OnItemClickListener
 
 class MainActivity() : AppCompatActivity(),TextWatcher
-    , OnClickListener, CompoundButton.OnCheckedChangeListener {
+    , OnClickListener, CompoundButton.OnCheckedChangeListener
+    , OnItemClickListener{
 
     private var edtName: EditText? = null
     private var edtAge: EditText? = null
@@ -26,21 +27,16 @@ class MainActivity() : AppCompatActivity(),TextWatcher
     private var sAge: String? = null
     private var sGender: String? = null
 
-    private var iAge = 0
+    private var iItemPos = 0
+    private var sItemAction: String? = null
 
     private var sMensaje: String? = null
 
     private var iNum = 10
-    private var iCount = 1
 
     internal var arNames: Array<String>? = null
     internal var arAges: Array<String>? = null
     internal var arGenders: Array<String>? = null
-
-    constructor(parcel: Parcel) : this() {
-        sName = parcel.readString()
-        iAge = parcel.readInt()
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -98,6 +94,7 @@ class MainActivity() : AppCompatActivity(),TextWatcher
         btnGo!!.setOnClickListener(this)
 
         //Lista
+        ltvGrid!!.setOnItemClickListener(this)
 
     }//add_listeners
 
@@ -124,6 +121,19 @@ class MainActivity() : AppCompatActivity(),TextWatcher
 
         //this.operacion()
     }//view.onclick
+
+    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        edtName!!.setText(arNames?.get(position))
+        edtAge!!.setText(arAges?.get(position))
+
+        when(arGenders!!.get(position)){
+            "Man" -> rdbGender2!!.isChecked = true
+            "Woman" -> rdbGender1!!.isChecked = true
+        }//when
+
+        this.iItemPos = position
+        this.sItemAction = "update"
+    }//onItemClick
 
     override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
         Toast.makeText(this,s.toString(),Toast.LENGTH_SHORT).show()
