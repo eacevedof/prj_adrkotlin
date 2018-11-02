@@ -1,7 +1,11 @@
 package es.theframework.adrkotlin
 
+import android.content.Context
+import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.text.Editable
 import android.text.InputType
 import android.text.TextWatcher
@@ -9,10 +13,12 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget.*
 import android.widget.AdapterView.OnItemClickListener
+import android.widget.AdapterView.OnItemLongClickListener
 
 class MainActivity() : AppCompatActivity(),TextWatcher
     , OnClickListener, CompoundButton.OnCheckedChangeListener
-    , OnItemClickListener{
+    , OnItemClickListener
+    , AdapterView.OnItemLongClickListener{
 
     private var edtName: EditText? = null
     private var edtAge: EditText? = null
@@ -34,9 +40,11 @@ class MainActivity() : AppCompatActivity(),TextWatcher
 
     private var iNum = 10
 
-    internal var arNames: Array<String>? = null
-    internal var arAges: Array<String>? = null
-    internal var arGenders: Array<String>? = null
+    private var arNames: Array<String>? = null
+    private var arAges: Array<String>? = null
+    private var arGenders: Array<String>? = null
+
+    private var oVibrator: Vibrator? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +55,9 @@ class MainActivity() : AppCompatActivity(),TextWatcher
         this.add_listeners()
 
         this.edtName!!.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS
+        this.oVibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator?
+
+
         this.arNames = Array(this.iNum){""}
         this.arAges = Array(this.iNum){""}
         this.arGenders = Array(this.iNum){""}
@@ -65,19 +76,19 @@ class MainActivity() : AppCompatActivity(),TextWatcher
     private fun load_inputs()
     {
         //cajas input
-        edtName = findViewById(R.id.edtName) as EditText
-        edtAge = findViewById(R.id.edtAge) as EditText
+        edtName = findViewById(R.id.edtName)
+        edtAge = findViewById(R.id.edtAge)
         //labels
-        txtName = findViewById(R.id.txtName) as TextView
-        txtAge = findViewById(R.id.txtAge) as TextView
+        txtName = findViewById(R.id.txtName)
+        txtAge = findViewById(R.id.txtAge)
         //gender
-        rdbGender1 = findViewById(R.id.rdbGender1) as RadioButton
-        rdbGender2 = findViewById(R.id.rdbGender2) as RadioButton
+        rdbGender1 = findViewById(R.id.rdbGender1)
+        rdbGender2 = findViewById(R.id.rdbGender2)
 
         //buttons
-        btnGo = findViewById(R.id.btnGo) as Button
+        btnGo = findViewById(R.id.btnGo)
 
-        ltvGrid = findViewById(R.id.ltvGrid) as ListView
+        ltvGrid = findViewById(R.id.ltvGrid)
     }//load_inputs
 
     private fun add_listeners()
@@ -95,6 +106,7 @@ class MainActivity() : AppCompatActivity(),TextWatcher
 
         //Lista
         ltvGrid!!.onItemClickListener = this
+        ltvGrid!!.onItemLongClickListener = this
 
     }//add_listeners
 
@@ -134,6 +146,24 @@ class MainActivity() : AppCompatActivity(),TextWatcher
         this.iItemPos = position
         this.sItemAction = "update"
     }//onItemClick
+
+    override fun onItemLongClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long): Boolean
+    {
+        //VIDEO 30 https://youtu.be/HOrQtrxcKsI?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&t=421
+        //si todas las versiones de android son mayores o igual a la nueva version de android
+        //si en nuestro disp tenemos la versión mas actual del SO android podremos ejecutar
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        {
+            toast_it("vibrando...")
+            oVibrator?.vibrate(VibrationEffect.createOneShot(5,20))
+        }
+        else
+        {
+            oVibrator?.vibrate(3)
+            toast_it("No se cumple para vibrador :(")
+        }
+        return true
+    }//onItemLongClick
 
     override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
         //Toast.makeText(this,s.toString(),Toast.LENGTH_SHORT).show()

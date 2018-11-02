@@ -113,8 +113,28 @@
     - Cambio a `ltvGrid!!.onItemClickListener = this`
     - `for(i in 0.until(iNames-1))`
  - [30 - Hacer vibrar el móvil](https://youtu.be/HOrQtrxcKsI?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS)
-    - 
- 
+    ```kotlin
+    override fun onItemLongClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long): Boolean
+    {
+        //VIDEO 30 https://youtu.be/HOrQtrxcKsI?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&t=421
+        //si todas las versiones de android son mayores o igual a la nueva version de android
+        //si en nuestro disp tenemos la versión mas actual del SO android podremos ejecutar
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        {
+            toast_it("vibrando...")
+            oVibrator?.vibrate(VibrationEffect.createOneShot(5,20))
+        }
+        else
+        {
+            oVibrator?.vibrate(3)
+            toast_it("No se cumple para vibrador :(")
+        }
+        return true
+    }//onItemLongClick
+    ```
+    - [Tocar el archivo manifest para permisos de vibración](https://youtu.be/HOrQtrxcKsI?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&t=591)
+    - `E:\xampp\htdocs\prj_adrkotlin\app\src\main\AndroidManifest.xml`
+    - `<uses-permission android:name="android.permission.VIBRATE"/>`
 ## Errors
 - 1 `Android resource linking failed Output: app\build\intermediates\incremental\mergeDebugResources\merged.dir\values\values.xml:646: 
      error: style attribute 'attr/colorButtonBackground (aka es.theframework.adrkotlin:attr/colorButtonBackground)' not found.`
