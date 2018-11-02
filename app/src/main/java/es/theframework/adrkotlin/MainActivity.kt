@@ -19,7 +19,7 @@ import android.widget.AdapterView.OnItemLongClickListener
 class MainActivity() : AppCompatActivity(),TextWatcher
     , OnClickListener, CompoundButton.OnCheckedChangeListener
     , OnItemClickListener
-    , AdapterView.OnItemLongClickListener{
+    , OnItemLongClickListener{
 
     private var edtName: EditText? = null
     private var edtAge: EditText? = null
