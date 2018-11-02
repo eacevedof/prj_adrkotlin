@@ -39,6 +39,7 @@ class MainActivity() : AppCompatActivity(),TextWatcher
         this.add_listeners()
         //this.operacion()
         //this.operacion_2()
+        this.operacion_3()
     }//onCreate
 
     private fun toast_it(sMessage:String?)
@@ -126,6 +127,17 @@ class MainActivity() : AppCompatActivity(),TextWatcher
         val arString = arrayOf("Alex","Aj","Eaf","PDHN")
         arString[1] = "hola mundo"
         sData = arString[1]
+        arString.set(1,"Posicion Uno")
+        sData = arString.get(1)
+
+
+        for( s in arString) sData = s
+        for(i in 0..3) sData = arString.get(i)
+
+        var iString = arString.count()
+        for(i in 0..iString) sData =  arString.get(i)
+
+
 
     }//operacion_3
 

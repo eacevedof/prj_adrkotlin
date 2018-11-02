@@ -9,7 +9,15 @@
     - No existen arrays de tipo string!!
     - se crea así: `val arString = arrayOf("Alex","Aj","Eaf","PDHN")`
 - [23 - Bucle ciclo for](https://www.youtube.com/watch?v=I5SBrAXsMxw&index=23&list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS)
+    - `for( s in arString) sData = s`
+    - `for(i in 0..3) sData = arString.get(i)`
+    ```kotlin
+    var iString = arString.count()
+    for(i in 0..iString) sData =  arString.get(i)
+    ```
+- []()
 
+    
 ## Errors
 - 1 `Android resource linking failed Output: app\build\intermediates\incremental\mergeDebugResources\merged.dir\values\values.xml:646: 
      error: style attribute 'attr/colorButtonBackground (aka es.theframework.adrkotlin:attr/colorButtonBackground)' not found.`
