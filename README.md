@@ -111,8 +111,9 @@
     ```
  - [29 - Actualizando datos en los arrays](https://youtu.be/PznBOoUKfrA?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&t=89)
     - Cambio a `ltvGrid!!.onItemClickListener = this`
-    - `for(i in 0.until(iNames-1))`   
- 
+    - `for(i in 0.until(iNames-1))`
+ - [30 - Hacer vibrar el móvil](https://youtu.be/HOrQtrxcKsI?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS)
+    - 
  
 ## Errors
 - 1 `Android resource linking failed Output: app\build\intermediates\incremental\mergeDebugResources\merged.dir\values\values.xml:646: 
