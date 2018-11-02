@@ -8,6 +8,7 @@
 - [22 - Tipos de array](https://www.youtube.com/watch?v=PE22BxijE7M&list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&index=22)
     - No existen arrays de tipo string!!
     - se crea así: `val arString = arrayOf("Alex","Aj","Eaf","PDHN")`
+- [23 - Bucle ciclo for](https://www.youtube.com/watch?v=I5SBrAXsMxw&index=23&list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS)
 
 ## Errors
 - 1 `Android resource linking failed Output: app\build\intermediates\incremental\mergeDebugResources\merged.dir\values\values.xml:646: 
