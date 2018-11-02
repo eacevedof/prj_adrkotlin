@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
+import android.support.v7.app.AlertDialog
 import android.text.Editable
 import android.text.InputType
 import android.text.TextWatcher
@@ -72,6 +73,12 @@ class MainActivity() : AppCompatActivity(),TextWatcher
     {
         Toast.makeText(this,sMessage,Toast.LENGTH_LONG).show()
     }//toast_it
+
+    private fun alert_it(i:Int)
+    {
+        val oAlert = AlertDialog.Builder(this)
+        oAlert.setIcon()
+    }//alert_it
 
     private fun load_inputs()
     {

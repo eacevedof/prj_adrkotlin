@@ -135,6 +135,12 @@
     - [Tocar el archivo manifest para permisos de vibración](https://youtu.be/HOrQtrxcKsI?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&t=591)
     - `E:\xampp\htdocs\prj_adrkotlin\app\src\main\AndroidManifest.xml`
     - `<uses-permission android:name="android.permission.VIBRATE"/>`
+ - [31 - La clase AlertDialog](https://youtu.be/2yfjrJFWb7E?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS)
+    - 
+
+
+<hr/>
+
 ## Errors
 - 1 `Android resource linking failed Output: app\build\intermediates\incremental\mergeDebugResources\merged.dir\values\values.xml:646: 
      error: style attribute 'attr/colorButtonBackground (aka es.theframework.adrkotlin:attr/colorButtonBackground)' not found.`
