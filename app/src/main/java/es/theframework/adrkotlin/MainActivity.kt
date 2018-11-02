@@ -19,11 +19,22 @@ class MainActivity() : AppCompatActivity(),TextWatcher
     private var rdbGender1: RadioButton? = null
     private var rdbGender2: RadioButton? = null
     private var btnGo: Button? = null
+    private var ltvGrid: ListView? = null
 
     private var sName: String? = null
+    private var sAge: String? = null
+    private var sGender: String? = null
+
     private var iAge = 0
 
     private var sMensaje: String? = null
+
+    private var iNum = 10
+    private var iCount = 1
+
+    internal var arNames: Array<String>? = null
+    internal var arAges: Array<String>? = null
+    internal var arGenders: Array<String>? = null
 
     constructor(parcel: Parcel) : this() {
         sName = parcel.readString()
@@ -37,6 +48,11 @@ class MainActivity() : AppCompatActivity(),TextWatcher
 
         this.load_inputs()
         this.add_listeners()
+
+        this.arNames = Array(this.iNum){""}
+        this.arAges = Array(this.iNum){""}
+        this.arGenders = Array(this.iNum){""}
+
         //this.operacion()
         //this.operacion_2()
         //this.operacion_3()
@@ -62,6 +78,8 @@ class MainActivity() : AppCompatActivity(),TextWatcher
 
         //buttons
         btnGo = findViewById(R.id.btnGo) as Button
+
+        ltvGrid = findViewById(R.id.ltvGrid) as ListView
     }//load_inputs
 
     private fun add_listeners()
@@ -74,8 +92,11 @@ class MainActivity() : AppCompatActivity(),TextWatcher
         rdbGender1!!.setOnClickListener(this)
         rdbGender2!!.setOnClickListener(this)
 
-
+        //Botón
         btnGo!!.setOnClickListener(this)
+
+        //Lista
+
     }//add_listeners
 
     override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
@@ -94,7 +115,7 @@ class MainActivity() : AppCompatActivity(),TextWatcher
     override fun onClick(v: View?) {
         when(v!!.id)
         {
-            R.id.btnGo -> operacion_3()
+            R.id.btnGo -> operacion_5()
             R.id.rdbGender1 -> toast_it("Ha seleccionado Femenino")
             R.id.rdbGender2 -> toast_it("Ha seleccionado Masculino")
         }//when(v.id)
@@ -114,6 +135,36 @@ class MainActivity() : AppCompatActivity(),TextWatcher
 
     }//afterTextChanged
 
+    //video26 - listView: https://youtu.be/7Hl24amE8lo?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&t=437
+    private fun operacion_5()
+    {
+        this.sName = edtName?.text.toString()
+        this.sAge = edtAge?.text.toString()
+        if(sName?.equals("")?:false)
+        {
+            edtName!!.requestFocus()
+        }
+        else
+        {
+            if(sAge?.equals("")?:false)
+            {
+                edtAge!!.requestFocus();
+            }
+            else
+            {
+                if(rdbGender1!!.isChecked || rdbGender2!!.isChecked){
+                    val arNamestmp: Array<String>
+                    for(i in 0..this.iNum) {
+                        arNames?.set(i, this.sName as String)
+                        arAges?.set(i, this.sAge as String)
+                        arGenders?.set(i, this.sGender as String)
+                    }//for iNum
+                }
+            }
+        }
+
+    }//operacion_5
+
     //video:25 https://youtu.be/XNkohi44ghA?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&t=313
     private fun operacion_4()
     {
@@ -132,7 +183,6 @@ class MainActivity() : AppCompatActivity(),TextWatcher
             sItem -> sData = sItem.toString()
         }
     }//operacion_4
-
 
     //video: [tipos de array](https://youtu.be/PE22BxijE7M?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS)
     private fun operacion_3()

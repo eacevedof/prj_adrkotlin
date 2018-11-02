@@ -33,7 +33,36 @@
     arNulls = arrayOfNulls<String>(3)
     ```
  - [26 - Control listView](https://www.youtube.com/watch?v=7Hl24amE8lo&list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&index=26)
-    
+    - No se plasma los datos en el listView. Solo se agrega el control al layout
+    ```kotlin
+    private fun operacion_5()
+    {
+        this.sName = edtName?.text.toString()
+        this.sAge = edtAge?.text.toString()
+        if(sName?.equals("")?:false)
+        {
+            edtName!!.requestFocus()
+        }
+        else
+        {
+            if(sAge?.equals("")?:false)
+            {
+                edtAge!!.requestFocus();
+            }
+            else
+            {
+                if(rdbGender1!!.isChecked || rdbGender2!!.isChecked){
+                    val arNamestmp: Array<String>
+                    for(i in 0..this.iNum) {
+                        arNames?.set(i, this.sName as String)
+                        arAges?.set(i, this.sAge as String)
+                        arGenders?.set(i, this.sGender as String)
+                    }//for iNum
+                }
+            }
+        }
+    }//operacion_5
+    ```
 ## Errors
 - 1 `Android resource linking failed Output: app\build\intermediates\incremental\mergeDebugResources\merged.dir\values\values.xml:646: 
      error: style attribute 'attr/colorButtonBackground (aka es.theframework.adrkotlin:attr/colorButtonBackground)' not found.`
