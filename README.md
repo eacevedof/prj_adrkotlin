@@ -149,6 +149,8 @@
             .show()
     }//alert_it
     ```
+- [32 - Eliminado datos de los arreglos](https://www.youtube.com/watch?v=WMPeOek8GxE&index=32&list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS)
+    
 <hr/>
 
 ## Errors
