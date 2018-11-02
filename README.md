@@ -63,6 +63,8 @@
         }
     }//operacion_5
     ```
+- [27 - Clase ArrayAdapter](https://youtu.be/X96hmJZnTX8?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS)
+
 ## Errors
 - 1 `Android resource linking failed Output: app\build\intermediates\incremental\mergeDebugResources\merged.dir\values\values.xml:646: 
      error: style attribute 'attr/colorButtonBackground (aka es.theframework.adrkotlin:attr/colorButtonBackground)' not found.`
