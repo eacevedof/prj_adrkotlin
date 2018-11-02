@@ -32,7 +32,7 @@
     var arNulls = Array<String?>(3){null}
     arNulls = arrayOfNulls<String>(3)
     ```
- 
+ - [26 - Control listView](https://www.youtube.com/watch?v=7Hl24amE8lo&list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&index=26)
     
 ## Errors
 - 1 `Android resource linking failed Output: app\build\intermediates\incremental\mergeDebugResources\merged.dir\values\values.xml:646: 
