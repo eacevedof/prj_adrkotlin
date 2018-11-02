@@ -77,7 +77,11 @@ class MainActivity() : AppCompatActivity(),TextWatcher
     private fun alert_it(i:Int)
     {
         val oAlert = AlertDialog.Builder(this)
-        oAlert.setIcon()
+        oAlert.setIcon(R.mipmap.ic_myalert)
+            .setTitle(R.string.alert_delete)
+            .setPositiveButton("Remove"){dialog,which -> toast_it("Removing...")}
+            .setNegativeButton("Cancel"){dialog,which ->}
+            .show()
     }//alert_it
 
     private fun load_inputs()
@@ -161,13 +165,14 @@ class MainActivity() : AppCompatActivity(),TextWatcher
         //si en nuestro disp tenemos la versión mas actual del SO android podremos ejecutar
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
         {
-            toast_it("vibrando...")
+            //toast_it("vibrando...")
             oVibrator?.vibrate(VibrationEffect.createOneShot(5,20))
+            alert_it(position)
         }
         else
         {
             oVibrator?.vibrate(3)
-            toast_it("No se cumple para vibrador :(")
+            alert_it(position)
         }
         return true
     }//onItemLongClick

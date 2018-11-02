@@ -136,9 +136,19 @@
     - `E:\xampp\htdocs\prj_adrkotlin\app\src\main\AndroidManifest.xml`
     - `<uses-permission android:name="android.permission.VIBRATE"/>`
  - [31 - La clase AlertDialog](https://youtu.be/2yfjrJFWb7E?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS)
-    - 
-
-
+    - [Incluir icono](https://youtu.be/2yfjrJFWb7E?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&t=210)
+    - [Repositorio de iconos](https://material.io/tools/icons/?icon=announcement&style=round)
+    ```kotlin
+    private fun alert_it(i:Int)
+    {
+        val oAlert = AlertDialog.Builder(this)
+        oAlert.setIcon(R.mipmap.ic_myalert)
+            .setTitle(R.string.alert_delete)
+            .setPositiveButton("Remove"){dialog,which -> toast_it("Removing...")}
+            .setNegativeButton("Cancel"){dialog,which ->}
+            .show()
+    }//alert_it
+    ```
 <hr/>
 
 ## Errors
