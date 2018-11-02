@@ -39,28 +39,54 @@
     {
         this.sName = edtName?.text.toString()
         this.sAge = edtAge?.text.toString()
+
+        if(sAge?.equals("")?:false)
+        {
+            edtAge!!.requestFocus()
+            toast_it("Missing Age")
+            return
+        }
+
         if(sName?.equals("")?:false)
         {
             edtName!!.requestFocus()
+            toast_it("Missing Name")
+            return
+        }
+
+        if(!(rdbGender1!!.isChecked || rdbGender2!!.isChecked))
+        {
+            toast_it("Choose Gender")
+            return
         }
         else
+            sGender = (if(rdbGender1!!.isChecked) rdbGender1!!.text.toString() else rdbGender2!!.text.toString())
+
+        //array que se vinculará al adapter que se pasará al listview grid
+        var arAdapter: Array<String>
+        var iNames = this.arNames?.size as Int
+
+        for(i in 0..(iNames-1))
         {
-            if(sAge?.equals("")?:false)
+            //si no se ha guardado un nombre en esa posición
+            if(arNames?.get(i).equals(""))
             {
-                edtAge!!.requestFocus();
-            }
-            else
-            {
-                if(rdbGender1!!.isChecked || rdbGender2!!.isChecked){
-                    val arNamestmp: Array<String>
-                    for(i in 0..this.iNum) {
-                        arNames?.set(i, this.sName as String)
-                        arAges?.set(i, this.sAge as String)
-                        arGenders?.set(i, this.sGender as String)
-                    }//for iNum
-                }
-            }
-        }
+                //guardo el nuevo nombre
+                arNames?.set(i, sName as String)
+                arAges?.set(i, sAge as String)
+                arGenders?.set(i, sGender as String)
+
+                //creo el adapter con el tamaño de arNames
+                arAdapter = Array<String>(iNames,{ "" })
+                //recargo el array del adapter con todo lo que hubiera en names
+                for(j in 0..i)
+                    arAdapter[j] = arNames?.get(j).toString()
+
+                val oAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arAdapter)
+                ltvGrid!!.adapter = oAdapter
+                break
+            }//endif(nombre en blanco)
+        }//for i .. iNum
     }//operacion_5
     ```
 - [27 - Clase ArrayAdapter](https://youtu.be/X96hmJZnTX8?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS)
