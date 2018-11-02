@@ -109,7 +109,10 @@
         this.sItemAction = "update"
     }//onItemClick
     ```
+ - [29 - Actualizando datos en los arrays](https://youtu.be/PznBOoUKfrA?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&t=89)
     
+ 
+ 
 ## Errors
 - 1 `Android resource linking failed Output: app\build\intermediates\incremental\mergeDebugResources\merged.dir\values\values.xml:646: 
      error: style attribute 'attr/colorButtonBackground (aka es.theframework.adrkotlin:attr/colorButtonBackground)' not found.`
