@@ -16,6 +16,17 @@
     for(i in 0..iString) sData =  arString.get(i)
     ```
 - [34 - Bucle ciclo forEach](https://www.youtube.com/watch?v=KUgzw_I8uqg&list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&index=24)
+    ```kotlin
+    var arStrings2 = Array<String>(3){""}
+    var arStrings3 = Array(3){""}
+    var arInts1 = Array<Int>(3){0}
+    var arInts2 = Array(3){0}    
+  
+    //https://youtu.be/KUgzw_I8uqg?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&t=866
+    arString.forEach {
+       sItem -> sData = sItem
+    }//froeach
+    ```
 
 
     
