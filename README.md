@@ -28,8 +28,11 @@
     }//froeach
     ```
  - [25 - Funcion arrayOfNulls](https://youtu.be/XNkohi44ghA?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS)
+    ```kotlin
+    var arNulls = Array<String?>(3){null}
+    arNulls = arrayOfNulls<String>(3)
+    ```
  
-    
     
 ## Errors
 - 1 `Android resource linking failed Output: app\build\intermediates\incremental\mergeDebugResources\merged.dir\values\values.xml:646: 

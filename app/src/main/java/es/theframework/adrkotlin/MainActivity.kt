@@ -39,7 +39,8 @@ class MainActivity() : AppCompatActivity(),TextWatcher
         this.add_listeners()
         //this.operacion()
         //this.operacion_2()
-        this.operacion_3()
+        //this.operacion_3()
+        this.operacion_4()
     }//onCreate
 
     private fun toast_it(sMessage:String?)
@@ -112,6 +113,26 @@ class MainActivity() : AppCompatActivity(),TextWatcher
     override fun afterTextChanged(s: Editable?) {
 
     }//afterTextChanged
+
+    //video:25 https://youtu.be/XNkohi44ghA?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&t=313
+    private fun operacion_4()
+    {
+        var sData = ""
+        var arNames = arrayOf("Alex","AJ","PDHN")
+        var arNulls = Array<String?>(3){null}
+        arNulls = arrayOfNulls<String>(3)
+
+        var iNulls = arNames.size
+        iNulls--
+
+        for(i in 0..iNulls)
+            arNulls.set(i,arNames.get(i))
+
+        arNulls.forEach {
+            sItem -> sData = sItem.toString()
+        }
+    }//operacion_4
+
 
     //video: [tipos de array](https://youtu.be/PE22BxijE7M?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS)
     private fun operacion_3()
