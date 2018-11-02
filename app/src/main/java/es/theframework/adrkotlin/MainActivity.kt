@@ -41,6 +41,11 @@ class MainActivity() : AppCompatActivity(),TextWatcher
         //this.operacion_2()
     }//onCreate
 
+    private fun toast_it(sMessage:String?)
+    {
+        Toast.makeText(this,sMessage,Toast.LENGTH_LONG).show()
+    }//toast_it
+
     private fun load_inputs()
     {
         //cajas input
@@ -60,8 +65,14 @@ class MainActivity() : AppCompatActivity(),TextWatcher
     private fun add_listeners()
     {
         edtName!!.addTextChangedListener(this)
+
+        //Radios
         rdbGender1!!.setOnCheckedChangeListener(this)
         rdbGender2!!.setOnCheckedChangeListener(this)
+        rdbGender1!!.setOnClickListener(this)
+        rdbGender2!!.setOnClickListener(this)
+
+
         btnGo!!.setOnClickListener(this)
     }//add_listeners
 
@@ -75,13 +86,18 @@ class MainActivity() : AppCompatActivity(),TextWatcher
                 if(isChecked) sMessage = "Ha seleccionado Masculino"
 
         }
-        if(sMessage!="")
-            Toast.makeText(this,sMessage,Toast.LENGTH_LONG).show()
+        //if(sMessage!="") toast_it(sMessage)
     }//onCheckedChanged
 
     override fun onClick(v: View?) {
+        when(v!!.id)
+        {
+            R.id.btnGo -> operacion()
+            R.id.rdbGender1 -> toast_it("Ha seleccionado Femenino")
+            R.id.rdbGender2 -> toast_it("Ha seleccionado Masculino")
+        }//when(v.id)
 
-        this.operacion()
+        //this.operacion()
     }//view.onclick
 
     override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
@@ -98,6 +114,7 @@ class MainActivity() : AppCompatActivity(),TextWatcher
 
     private fun operacion()
     {
+        toast_it("this.operacion()")
         sName = edtName?.text.toString()
         val sAge =  edtAge?.text.toString()
 
