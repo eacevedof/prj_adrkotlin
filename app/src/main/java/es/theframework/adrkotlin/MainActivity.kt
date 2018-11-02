@@ -38,7 +38,7 @@ class MainActivity() : AppCompatActivity(),TextWatcher
         this.load_inputs()
         this.add_listeners()
         //this.operacion()
-        this.operacion_2()
+        //this.operacion_2()
     }//onCreate
 
     private fun load_inputs()
@@ -66,10 +66,21 @@ class MainActivity() : AppCompatActivity(),TextWatcher
     }//add_listeners
 
     override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
-        Toast.makeText(this,"Ha seleccionado una opcion",Toast.LENGTH_LONG).show()
-    }
+        var sMessage: String ? = ""
+
+        when(buttonView!!.id){
+            R.id.rdbGender1 ->
+                if(isChecked) sMessage = "Ha seleccionado Femenino"
+            R.id.rdbGender2 ->
+                if(isChecked) sMessage = "Ha seleccionado Masculino"
+
+        }
+        if(sMessage!="")
+            Toast.makeText(this,sMessage,Toast.LENGTH_LONG).show()
+    }//onCheckedChanged
 
     override fun onClick(v: View?) {
+
         this.operacion()
     }//view.onclick
 
