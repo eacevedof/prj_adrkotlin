@@ -116,7 +116,35 @@ class MainActivity() : AppCompatActivity(),TextWatcher
     //video: [tipos de array](https://youtu.be/PE22BxijE7M?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS)
     private fun operacion_3()
     {
+        var arInts = IntArray(10)
+        var arDoubles = DoubleArray(size = 10)
+        var arChars = CharArray(10)
+        var arBools = BooleanArray(10)
+        var arFloats = FloatArray(10)
+        var arBites = ByteArray(10)
 
+        var sData = ""
+        val arString = arrayOf("Alex","Aj","Eaf","PDHN")
+
+        arString[1] = "hola mundo"
+        sData = arString[1]
+        arString.set(1,"Posicion Uno")
+        sData = arString.get(1)
+
+        for( s in arString) sData = s
+        for(i in 0..3) sData = arString.get(i)
+
+        var iString = arString.count()-1
+        for(i in 0..iString) sData =  arString.get(i)
+
+        var arStrings2 = Array<String>(3){""}
+        var arStrings3 = Array(3){""}
+        var arInts1 = Array<Int>(3){0}
+        var arInts2 = Array(3){0}
+
+        arString.forEach {
+            sItem -> sData = sItem
+        }//froeach
 
     }//operacion_3
 

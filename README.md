@@ -12,7 +12,7 @@
     - `for( s in arString) sData = s`
     - `for(i in 0..3) sData = arString.get(i)`
     ```kotlin
-    var iString = arString.count()
+    var iString = arString.count()-1
     for(i in 0..iString) sData =  arString.get(i)
     ```
 - [34 - Bucle ciclo forEach](https://www.youtube.com/watch?v=KUgzw_I8uqg&list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&index=24)
