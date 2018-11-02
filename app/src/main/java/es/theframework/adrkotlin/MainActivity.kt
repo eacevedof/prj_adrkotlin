@@ -9,7 +9,8 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget.*
 
-class MainActivity() : AppCompatActivity(),TextWatcher, OnClickListener, CompoundButton.OnCheckedChangeListener {
+class MainActivity() : AppCompatActivity(),TextWatcher
+    , OnClickListener, CompoundButton.OnCheckedChangeListener {
 
     private var edtName: EditText? = null
     private var edtAge: EditText? = null
@@ -62,7 +63,7 @@ class MainActivity() : AppCompatActivity(),TextWatcher, OnClickListener, Compoun
     }//add_listeners
 
     override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
-        Toast.makeText(this,"Ha seleccionado una opcion",Toast.LENGTH_LONG)
+        Toast.makeText(this,"Ha seleccionado una opcion",Toast.LENGTH_LONG).show()
     }
 
     override fun onClick(v: View?) {
