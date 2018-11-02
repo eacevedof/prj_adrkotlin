@@ -6,6 +6,8 @@
 - [15 - Operador Elvis con false](https://youtu.be/Qaa9F4Uv4E4?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&t=794)
 - [21 - RadioButton evento onClick](https://youtu.be/wBPdVE2-aAE?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS)
 - [22 - Tipos de array](https://www.youtube.com/watch?v=PE22BxijE7M&list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&index=22)
+    - No existen arrays de tipo string!!
+    - se crea así: `val arString = arrayOf("Alex","Aj","Eaf","PDHN")`
 
 ## Errors
 - 1 `Android resource linking failed Output: app\build\intermediates\incremental\mergeDebugResources\merged.dir\values\values.xml:646: 

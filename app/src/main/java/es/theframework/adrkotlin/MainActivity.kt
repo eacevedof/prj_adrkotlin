@@ -92,7 +92,7 @@ class MainActivity() : AppCompatActivity(),TextWatcher
     override fun onClick(v: View?) {
         when(v!!.id)
         {
-            R.id.btnGo -> operacion()
+            R.id.btnGo -> operacion_3()
             R.id.rdbGender1 -> toast_it("Ha seleccionado Femenino")
             R.id.rdbGender2 -> toast_it("Ha seleccionado Masculino")
         }//when(v.id)
@@ -111,6 +111,23 @@ class MainActivity() : AppCompatActivity(),TextWatcher
     override fun afterTextChanged(s: Editable?) {
 
     }//afterTextChanged
+
+    //video: [tipos de array](https://youtu.be/PE22BxijE7M?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS)
+    private fun operacion_3()
+    {
+        var arInts = IntArray(10)
+        var arDoubles = DoubleArray(size = 10)
+        var arChars = CharArray(10)
+        var arBools = BooleanArray(10)
+        var arFloats = FloatArray(10)
+        var arBites = ByteArray(10)
+
+        var sData = ""
+        val arString = arrayOf("Alex","Aj","Eaf","PDHN")
+        arString[1] = "hola mundo"
+        sData = arString[1]
+
+    }//operacion_3
 
     private fun operacion()
     {
