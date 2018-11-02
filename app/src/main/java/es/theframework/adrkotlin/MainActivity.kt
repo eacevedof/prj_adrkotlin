@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcel
 import android.text.Editable
+import android.text.InputType
 import android.text.TextWatcher
 import android.view.View
 import android.view.View.OnClickListener
@@ -49,6 +50,7 @@ class MainActivity() : AppCompatActivity(),TextWatcher
         this.load_inputs()
         this.add_listeners()
 
+        this.edtName!!.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS
         this.arNames = Array(this.iNum){""}
         this.arAges = Array(this.iNum){""}
         this.arGenders = Array(this.iNum){""}
@@ -153,13 +155,27 @@ class MainActivity() : AppCompatActivity(),TextWatcher
             else
             {
                 if(rdbGender1!!.isChecked || rdbGender2!!.isChecked){
-                    val arNamestmp: Array<String>
+                    var arNamestmp: Array<String>
                     for(i in 0..this.iNum) {
-                        arNames?.set(i, this.sName as String)
-                        arAges?.set(i, this.sAge as String)
-                        arGenders?.set(i, this.sGender as String)
+                        if(arNames?.get(i).equals(""))
+                        {
+                            arNames?.set(i, this.sName as String)
+                            arAges?.set(i, this.sAge as String)
+                            arGenders?.set(i, this.sGender as String)
+
+                            arNamestmp = Array<String>(this.iCount,{""})
+                            for(j in 0..i)
+                            {
+                                arNamestmp[j] = arNames?.get(j) as String
+                            }//for j
+
+                            val oAdapter = ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,arNamestmp)
+                            ltvGrid!!.adapter = oAdapter
+                            this.iCount++
+                            break
+                        }//si no hay nombre
                     }//for iNum
-                }
+                }//if(rdb.checked)
             }
         }
 
