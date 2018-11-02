@@ -23,6 +23,8 @@ class MainActivity() : AppCompatActivity(),TextWatcher
     private var sName: String? = null
     private var iAge = 0
 
+    private var sMensaje: String? = null
+
     constructor(parcel: Parcel) : this() {
         sName = parcel.readString()
         iAge = parcel.readInt()
@@ -36,6 +38,7 @@ class MainActivity() : AppCompatActivity(),TextWatcher
         this.load_inputs()
         this.add_listeners()
         //this.operacion()
+        this.operacion_2()
     }//onCreate
 
     private fun load_inputs()
@@ -94,5 +97,21 @@ class MainActivity() : AppCompatActivity(),TextWatcher
             txtAge?.text = sAge
 
     }//operacion
+
+    private fun operacion_2()
+    {
+        var sValue = "Java"
+        var iEntero = 1
+
+        when{
+            1 == iEntero ->
+                sMensaje = sValue
+            2 < iEntero
+                -> sMensaje = sValue
+            else ->
+                sMensaje = "No es correcto"
+        }//when
+
+    }//operacion_2
 
 }//MainActivity
