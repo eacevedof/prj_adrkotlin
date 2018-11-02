@@ -110,7 +110,8 @@
     }//onItemClick
     ```
  - [29 - Actualizando datos en los arrays](https://youtu.be/PznBOoUKfrA?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&t=89)
-    
+    - Cambio a `ltvGrid!!.onItemClickListener = this`
+    - `for(i in 0.until(iNames-1))`   
  
  
 ## Errors

@@ -28,7 +28,7 @@ class MainActivity() : AppCompatActivity(),TextWatcher
     private var sGender: String? = null
 
     private var iItemPos = 0
-    private var sItemAction: String? = null
+    private var sItemAction = "insert"
 
     private var sMensaje: String? = null
 
@@ -94,7 +94,7 @@ class MainActivity() : AppCompatActivity(),TextWatcher
         btnGo!!.setOnClickListener(this)
 
         //Lista
-        ltvGrid!!.setOnItemClickListener(this)
+        ltvGrid!!.onItemClickListener = this
 
     }//add_listeners
 
@@ -115,8 +115,8 @@ class MainActivity() : AppCompatActivity(),TextWatcher
         when(v!!.id)
         {
             R.id.btnGo -> operacion_5()
-            R.id.rdbGender1 -> toast_it("Ha seleccionado Femenino")
-            R.id.rdbGender2 -> toast_it("Ha seleccionado Masculino")
+            //R.id.rdbGender1 -> toast_it("Ha seleccionado Femenino")
+            //R.id.rdbGender2 -> toast_it("Ha seleccionado Masculino")
         }//when(v.id)
 
         //this.operacion()
@@ -136,7 +136,7 @@ class MainActivity() : AppCompatActivity(),TextWatcher
     }//onItemClick
 
     override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-        Toast.makeText(this,s.toString(),Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this,s.toString(),Toast.LENGTH_SHORT).show()
     }//onTextChanged
 
     override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -146,6 +146,73 @@ class MainActivity() : AppCompatActivity(),TextWatcher
     override fun afterTextChanged(s: Editable?) {
 
     }//afterTextChanged
+
+    private fun add_datos()
+    {
+        //array que se vinculará al adapter que se pasará al listview grid
+        var arAdapter: Array<String>
+        var iNames = this.arNames?.size as Int
+
+        for(i in 0.until(iNames-1))
+        {
+            //si no se ha guardado un nombre en esa posición
+            if(arNames?.get(i).equals(""))
+            {
+                //guardo el nuevo nombre
+                arNames?.set(i, sName as String)
+                arAges?.set(i, sAge as String)
+                arGenders?.set(i, sGender as String)
+
+                //creo el adapter con el tamaño de arNames
+                arAdapter = Array<String>(iNames,{ "" })
+                //recargo el array del adapter con todo lo que hubiera en names
+                for(j in 0..i)
+                    arAdapter[j] = arNames?.get(j).toString()
+
+                val oAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arAdapter)
+                ltvGrid!!.adapter = oAdapter
+                toast_it("Data inserted!!")
+                break
+            }//endif(nombre en blanco)
+        }//for i .. iNum
+
+        edtName!!.setText("")
+        edtAge!!.setText("")
+
+    }//add_datos
+
+    private fun upd_datos()
+    {
+        //array que se vinculará al adapter que se pasará al listview grid
+        var arAdapter: Array<String>
+        var iNames = this.arNames?.size as Int
+
+        for(i in 0.until(iNames-1))
+        {
+            //si no se ha guardado un nombre en esa posición
+            if(!arNames?.get(i).equals(""))
+            {
+                if(this.iItemPos === i)
+                {
+                    //guardo el nuevo nombre
+                    arNames?.set(i, sName as String)
+                    arAges?.set(i, sAge as String)
+                    arGenders?.set(i, sGender as String)
+                    toast_it("Data Updated!!")
+                }
+
+                //creo el adapter con el tamaño de arNames
+                arAdapter = Array<String>(iNames,{ "" })
+                //recargo el array del adapter con todo lo que hubiera en names
+                for(j in 0..i)
+                    arAdapter[j] = arNames?.get(j).toString()
+
+                val oAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arAdapter)
+                ltvGrid!!.adapter = oAdapter
+
+            }//endif(nombre en blanco)
+        }//for i .. iNum
+    }//upd_datos
 
     //video26 - listView: https://youtu.be/7Hl24amE8lo?list=PLfkODrpjGnhmzRSUC5L-M_BjkyavnSKXS&t=437
     private fun operacion_5()
@@ -175,31 +242,11 @@ class MainActivity() : AppCompatActivity(),TextWatcher
         else
             sGender = (if(rdbGender1!!.isChecked) rdbGender1!!.text.toString() else rdbGender2!!.text.toString())
 
-        //array que se vinculará al adapter que se pasará al listview grid
-        var arAdapter: Array<String>
-        var iNames = this.arNames?.size as Int
-
-        for(i in 0..(iNames-1))
+        when(this.sItemAction)
         {
-            //si no se ha guardado un nombre en esa posición
-            if(arNames?.get(i).equals(""))
-            {
-                //guardo el nuevo nombre
-                arNames?.set(i, sName as String)
-                arAges?.set(i, sAge as String)
-                arGenders?.set(i, sGender as String)
-
-                //creo el adapter con el tamaño de arNames
-                arAdapter = Array<String>(iNames,{ "" })
-                //recargo el array del adapter con todo lo que hubiera en names
-                for(j in 0..i)
-                    arAdapter[j] = arNames?.get(j).toString()
-
-                val oAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arAdapter)
-                ltvGrid!!.adapter = oAdapter
-                break
-            }//endif(nombre en blanco)
-        }//for i .. iNum
+            "insert" -> this.add_datos()
+            "update" -> this.upd_datos()
+        }//when(action)
 
     }//operacion_5
 
@@ -259,7 +306,7 @@ class MainActivity() : AppCompatActivity(),TextWatcher
 
     private fun operacion()
     {
-        toast_it("this.operacion()")
+        //toast_it("this.operacion()")
         sName = edtName?.text.toString()
         val sAge =  edtAge?.text.toString()
 
